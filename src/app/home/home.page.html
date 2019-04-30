@@ -1,17 +1,17 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>
-      Ionic CRUD-TODOS
+      SuperSênior
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
    <ion-list>
-     <ion-item-sliding *ngFor="let todo of todos">
-       <ion-item lines="inset" button [routerLink]="['/details', todo.id]">
+     <ion-item-sliding *ngFor="let user of users">
+       <ion-item lines="inset" button [routerLink]="['/details', user.id]">
          <ion-label>
-           {{todo.task}}
+           {{user.nome}}
          </ion-label>
        </ion-item>
        <ion-item-options side="end">

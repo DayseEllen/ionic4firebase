@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskI } from '../models/task.interface';
-import { TodoService } from '../services/todo.service';
+import { User } from '../models/user.interface';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +8,11 @@ import { TodoService } from '../services/todo.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage  implements OnInit {
-  todos: TaskI[];
-  constructor(private todoService:TodoService){}
+  users: User[];
+  constructor(private userService:UserService){}
 
   ngOnInit(){
-    this.todoService.getTodos().subscribe(res=> this.todos = res);
+    this.userService.getUsers().subscribe(res=> this.users = res);
   }
 
 }

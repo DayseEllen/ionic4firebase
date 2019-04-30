@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Detalhes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+   <ion-list lines="full">
+       <ion-item *ngIf="user">
+        <ion-input required type="text" placeholder="Nome" [(ngModel)]
+        ="user.nome"></ion-input>
+       </ion-item>
+       <ion-item>
+        <ion-label>Sexo</ion-label>
+        <ion-select required [(ngModel)]="user.sexo">
+          <ion-select-option>Feminino</ion-select-option>
+          <ion-select-option>Masculino</ion-select-option>
+        </ion-select>
+      </ion-item>
+       <ion-item *ngIf="user">
+        <ion-input required type="text" placeholder="Email" [(ngModel)]
+        ="user.email"></ion-input>
+       </ion-item>
+       <ion-item *ngIf="user">
+        <ion-input required type="password" placeholder="Senha" [(ngModel)]
+        ="user.senha"></ion-input>
+       </ion-item>
+   </ion-list>
+   <ion-button expand="full" (click)="saveUser()">Salvar</ion-button>
+   <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="danger">
+        <ion-fab-button color="danger" routerLink="/" routerDirection="forward" 
+        (click)="onRemove(userId)"> 
+          <ion-icon name="trash"></ion-icon>
+        </ion-fab-button>
+   </ion-fab>
+</ion-content>
